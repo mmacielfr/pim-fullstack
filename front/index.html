@@ -1,33 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KTM — Potência que Domina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">MODELOS</a></li>
-            </ul>
-             <ul>
-                <li><a href="#">SOBRE LPVM</a></li>
-            </ul>
-             <ul>
-                <li><a href="#">DIFERENCIAL</a></li>
-            </ul>
+
+    <!-- ============== NAVBAR ============== -->
+    <header class="navbar">
+        <nav class="nav-left">
+            <a href="#modelos">MODELOS</a>
+            <a href="#ktm-word">KTM WORD</a>
+            <a href="#diferencial">DIFERENCIAL</a>
         </nav>
-        <span class="logo">LPVM</span>
-        <a href="">LOGIN</a>
+
+        <a href="#" class="nav-logo" aria-label="KTM">
+            <img src="images/logo-ktm.svg" alt="" width="220" height="70" decoding="async">
+        </a>
+
+        <div class="nav-right">
+            <button class="btn-login" type="button">LOGING</button>
+        </div>
     </header>
-    <main>
-        <section class="hero-section"></section>
-        <section class="about-us-cta"></section>
-        <section class="three-cards"></section>
-        <section class="small-intro"></section>
-        <section class="warranty-wrapper"></section>
-    </main>
-    <footer></footer>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="images/agrupamento%20moto%20titulo%20inicio.png" alt="KTM RC 200 com texto Potência que Domina">
+        </div>
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <span class="hero-brand">KTM</span>
+                <span class="hero-model">RC 200</span>
+            </h1>
+            <p class="hero-desc">
+                O DNA de competição da marca em uma <span class="orange">esportiva leve</span>,
+                precisa e extremamente responsiva. Equipada com motor monocilíndrico de
+                <span class="orange">200 cc</span>, arrefecimento líquido e
+                <span class="orange">injeção eletrônica</span> ideal para pilotagem agressiva
+                e controle refinado. Ótima potência para quem busca
+                <span class="orange">velocidade e controle</span> nas ruas da cidade ou em
+                pilotagens esportivas.
+            </p>
+            <button class="btn-cta" type="button">COMPRAR</button>
+        </div>
+    </section>
+
+    <!-- ============== BRAD BINDER BANNER ============== -->
+    <section class="banner" id="ktm-word">
+        <div class="banner-bg-text" aria-hidden="true">
+            <span>BRAD BINDER</span>
+        </div>
+        <img class="banner-rider" src="images/IMAGEM%20BANNER%20PILOTO.png" alt="Brad Binder pilotando uma KTM Red Bull">
+        <button class="btn-banner" type="button">KTM WORD</button>
+    </section>
+
+    <!-- ============== MODELOS ============== -->
+    <section class="models" id="modelos">
+        <h2 class="section-title">MODELOS DISPONÍVEIS</h2>
+
+        <div class="model-grid">
+            <article class="model-card">
+                <div class="model-img">
+                    <img src="images/Image%20(2).png" alt="Moto KTM Off-Road">
+                </div>
+                <h3 class="model-name">OFF-ROAD</h3>
+                <button class="btn-cta btn-cta--small" type="button">Ver mais</button>
+            </article>
+
+            <article class="model-card">
+                <div class="model-img">
+                    <img src="images/Image%20(3).png" alt="Moto KTM Naked Duke">
+                </div>
+                <h3 class="model-name">NAKED</h3>
+                <button class="btn-cta btn-cta--small" type="button">Ver mais</button>
+            </article>
+
+            <article class="model-card">
+                <div class="model-img">
+                    <img src="images/Image%20(4).png" alt="Moto KTM Sport RC">
+                </div>
+                <h3 class="model-name">SPORT</h3>
+                <button class="btn-cta btn-cta--small" type="button">Ver mais</button>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============== ISSO É KTM ============== -->
+    <section class="ktm-essence" id="diferencial">
+        <div class="essence-banner">
+            <h2>ISSO É KTM</h2>
+        </div>
+
+        <div class="essence-content">
+            <div class="essence-rider">
+                <img src="images/Piloto%20imagem%20aba%20(isso%20%C3%A9%20ktm).png" alt="Piloto KTM em moto naked">
+            </div>
+
+            <div class="essence-features">
+
+                <article class="feature">
+                    <h3 class="feature-title">CHASSI <span class="orange">TRELIÇADO</span></h3>
+                    <p>
+                        KTM utiliza em suas motos chassi treliça, sendo tubos de aço
+                        interligados em formato triangular evitando torção na estrutura.
+                        Garantindo <span class="orange">leveza, estabilidade</span> e
+                        <span class="orange">precisão</span> nas curvas.
+                    </p>
+                    <div class="feature-line feature-line--right" aria-hidden="true"></div>
+                    <div class="feature-img feature-img--chassi">
+                        <img src="images/Chassi%20treli%C3%A7a%20(isso%20%C3%A9%20ktm).png" alt="Chassi treliçado KTM">
+                    </div>
+                </article>
+
+                <article class="feature">
+                    <h3 class="feature-title">GEOMETRIA <span>KTM</span></h3>
+                    <p>
+                        Desenvolvida para <span class="orange">máxima agilidade</span>, a
+                        geometria das motos permite mudanças rápidas de direção e
+                        <span class="orange">maior controle</span>, entregando uma pilotagem
+                        esportiva e dinâmica.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3 class="feature-title">SUSPENSÃO <span class="orange">WP</span></h3>
+                    <p>
+                        Absorve impactos com <span class="orange">eficiência máxima</span> e
+                        mantém a <span class="orange">estabilidade</span> mesmo em altas
+                        velocidades ou terrenos irregulares.
+                    </p>
+                    <div class="feature-line feature-line--right" aria-hidden="true"></div>
+                    <div class="feature-img feature-img--suspensao">
+                        <img src="images/Suspens%C3%A3o%20WP%20(isso%20%C3%A9%20ktm).png" alt="Suspensão WP KTM">
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== GARANTIA ============== -->
+    <section class="warranty">
+        <h2 class="section-title">GARANTIA</h2>
+
+        <div class="warranty-row">
+            <img class="warranty-badge warranty-badge--left" src="images/selo%20garantia%204%20anos%20png%20direita.png" alt="Selo 4 anos de garantia">
+            <div class="warranty-photo">
+                <img src="images/Image%20(5).png" alt="Piloto KTM em pista">
+            </div>
+            <img class="warranty-badge warranty-badge--right" src="images/selo%20garantia%204%20anos%20png%20direita.png" alt="Selo 4 anos de garantia">
+        </div>
+
+        <div class="warranty-info">
+            <h3 class="warranty-title">WORRY-FREE</h3>
+            <p>
+                <span class="orange">Toda moto KTM nova</span> vem com uma garantia de
+                fábrica. A duração depende do modelo específico. Para
+                <span class="orange">determinados modelos</span> (especificamente as linhas
+                LC8 e LC8c Street e Travel), a KTM oferece uma garantia estendida que pode
+                chegar a até <span class="orange">4 anos</span>, sem custo adicional.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>Nome do site</h4>
+                <div class="footer-socials" aria-label="Redes sociais">
+                    <a href="#" aria-label="Facebook">
+                        <img src="images/icon-facebook.svg" alt="" width="20" height="20" decoding="async">
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <img src="images/icon-linkedin.svg" alt="" width="20" height="20" decoding="async">
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <img src="images/icon-youtube.svg" alt="" width="20" height="20" decoding="async">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="images/icon-instagram.svg" alt="" width="20" height="20" decoding="async">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h5>Tópico</h5>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+            </div>
+            <div class="footer-col">
+                <h5>Tópico</h5>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+            </div>
+            <div class="footer-col">
+                <h5>Tópico</h5>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+                <a href="#">Página</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

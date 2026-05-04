@@ -1,0 +1,676 @@
+/* =============================================================
+   KTM LANDING PAGE — style.css
+   ============================================================= */
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- DESIGN TOKENS ---------- */
+:root {
+    --orange: #FF6600;
+    --orange-light: #FF8A33;
+    --orange-deep: #E55400;
+    --black: #000000;
+    --grey-text: #4a4a4a;
+    --max-width: 1280px;
+    --pad-x: clamp(1rem, 4vw, 4rem);
+}
+
+.orange {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+/* =============================================================
+   NAVBAR
+   ============================================================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem var(--pad-x);
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2.5rem;
+    flex: 1;
+}
+
+.nav-left a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--black);
+}
+
+.nav-logo {
+    flex: 0 0 auto;
+    width: 90px;
+}
+
+.nav-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-login {
+    background: var(--black);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    padding: 0.85rem 2.75rem;
+    border-radius: 4px;
+}
+
+/* =============================================================
+   HERO
+   ============================================================= */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 2rem auto 4rem;
+    padding: 0 var(--pad-x);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-text {
+    padding-right: 2rem;
+}
+
+.hero-title {
+    text-align: right;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-brand {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-style: italic;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+.hero-model {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-style: italic;
+    font-size: 3.25rem;
+    letter-spacing: 1px;
+    color: var(--orange);
+    margin-top: 0.25rem;
+}
+
+.hero-desc {
+    text-align: right;
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
+}
+
+.hero-text .btn-cta {
+    margin-left: auto;
+    display: block;
+}
+
+/* =============================================================
+   CTA BUTTON (orange gradient pill)
+   ============================================================= */
+.btn-cta {
+    background: linear-gradient(180deg, #FFB070 0%, #FF6A00 50%, #C84500 100%);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 0.9rem 3rem;
+    border-radius: 999px;
+    box-shadow:
+        0 6px 18px rgba(255, 102, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.btn-cta--small {
+    padding: 0.75rem 2.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: none;
+}
+
+/* =============================================================
+   BRAD BINDER BANNER
+   ============================================================= */
+.banner {
+    position: relative;
+    background: var(--orange);
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+.banner-bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.banner-bg-text span {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(8rem, 22vw, 22rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: transparent;
+    -webkit-text-stroke: 3px #fff;
+    white-space: nowrap;
+    transform: scaleY(1.4);
+    transform-origin: center;
+}
+
+.banner-rider {
+    position: relative;
+    z-index: 2;
+    max-height: 360px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: normal;
+}
+
+.btn-banner {
+    position: absolute;
+    z-index: 3;
+    bottom: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #FFB070 0%, #FF6A00 50%, #C84500 100%);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    padding: 0.95rem 3.5rem;
+    border-radius: 999px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* =============================================================
+   MODELOS DISPONÍVEIS
+   ============================================================= */
+.models {
+    max-width: var(--max-width);
+    margin: 5rem auto;
+    padding: 0 var(--pad-x);
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.model-card {
+    border: 2px solid var(--orange);
+    border-radius: 6px;
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.model-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.model-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.model-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+/* =============================================================
+   ISSO É KTM
+   ============================================================= */
+.ktm-essence {
+    margin-top: 4rem;
+}
+
+.essence-banner {
+    background: linear-gradient(90deg,
+        #fff 0%,
+        var(--orange) 8%,
+        var(--orange) 92%,
+        #fff 100%);
+    background: var(--orange);
+    padding: 1.25rem 0;
+    margin: 0 var(--pad-x);
+    border-radius: 4px;
+    position: relative;
+}
+
+.essence-banner::before,
+.essence-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+}
+
+.essence-banner::before {
+    left: 0;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+.essence-banner::after {
+    right: 0;
+    background: linear-gradient(-90deg, #fff, transparent);
+}
+
+.essence-banner h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    letter-spacing: 4px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.essence-content {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 3rem auto;
+    padding: 0 var(--pad-x);
+    align-items: start;
+}
+
+.essence-rider {
+    position: sticky;
+    top: 2rem;
+}
+
+.essence-rider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.essence-features {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.feature {
+    position: relative;
+    padding-right: 220px;
+}
+
+.feature-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    color: var(--black);
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.feature-line {
+    position: absolute;
+    top: 1rem;
+    right: 200px;
+    width: 80px;
+    height: 1px;
+    background: var(--black);
+}
+
+.feature-line::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--black);
+}
+
+.feature-line::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--black);
+}
+
+.feature-img {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    width: 200px;
+    height: auto;
+}
+
+.feature-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.feature-img--suspensao {
+    width: 130px;
+    right: 30px;
+}
+
+/* =============================================================
+   GARANTIA
+   ============================================================= */
+.warranty {
+    max-width: var(--max-width);
+    margin: 5rem auto 4rem;
+    padding: 0 var(--pad-x);
+}
+
+.warranty-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.warranty-badge {
+    width: 130px;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.warranty-badge--right {
+    transform: scaleX(-1);
+}
+
+.warranty-photo {
+    flex: 1;
+    max-width: 600px;
+}
+
+.warranty-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.warranty-info {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.warranty-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.warranty-info p {
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+.footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+    padding: 3rem var(--pad-x) 2rem;
+}
+
+.footer-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.footer-brand h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    color: var(--black);
+}
+
+.footer-socials a {
+    display: inline-flex;
+    transition: filter 0.2s;
+}
+
+.footer-socials a:hover img {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(98%) saturate(2654%) hue-rotate(1deg) brightness(101%) contrast(101%);
+}
+
+.footer-col h5 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--grey-text);
+    padding: 0.25rem 0;
+}
+
+/* =============================================================
+   RESPONSIVE
+   ============================================================= */
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    .hero-title,
+    .hero-desc {
+        text-align: center;
+    }
+
+    .hero-text .btn-cta {
+        margin: 0 auto;
+    }
+
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .essence-content {
+        grid-template-columns: 1fr;
+    }
+
+    .essence-rider {
+        position: static;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        padding-right: 0;
+    }
+
+    .feature-img {
+        position: static;
+        width: 60%;
+        margin: 1rem 0;
+    }
+
+    .feature-line {
+        display: none;
+    }
+
+    .warranty-row {
+        flex-wrap: wrap;
+    }
+
+    .warranty-badge {
+        width: 90px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-left {
+        order: 3;
+        flex: 1 1 100%;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .nav-left a {
+        font-size: 0.75rem;
+    }
+
+    .btn-login {
+        padding: 0.7rem 1.75rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
