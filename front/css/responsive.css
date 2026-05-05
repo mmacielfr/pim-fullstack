@@ -1,0 +1,150 @@
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-moto {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: min(480px, 92vw);
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    .hero-title,
+    .hero-desc {
+        text-align: center;
+    }
+
+    .hero-text .btn-cta {
+        margin: 0 auto;
+    }
+
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .essence-content {
+        grid-template-columns: 1fr;
+    }
+
+    .essence-rider {
+        position: static;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        padding-right: 0;
+    }
+
+    .feature-img {
+        position: static;
+        width: 60%;
+        margin: 1rem 0;
+    }
+
+    .feature-line {
+        display: none;
+    }
+
+    .warranty-row {
+        flex-wrap: wrap;
+    }
+
+    .warranty-badge {
+        width: 90px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-strip,
+    .product-strip--reverse {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "media"
+            "copy"
+            "action";
+    }
+
+    .product-strip__action,
+    .product-strip--reverse .product-strip__action {
+        justify-content: center;
+    }
+
+    .rental-card {
+        grid-template-columns: 1fr;
+    }
+
+    .rental-botao .btn-cta {
+        max-width: none;
+        width: 100%;
+    }
+
+    .submodel-feature {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+        flex: 1 1 45%;
+        max-width: none;
+        padding-bottom: 1.25rem;
+    }
+
+    .rodape-aluguel-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rodape-frase {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-left {
+        order: 3;
+        flex: 1 1 100%;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .nav-left a {
+        font-size: 0.75rem;
+    }
+
+    .btn-login {
+        padding: 0.7rem 1.75rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-aluguel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .logo-centro {
+        order: -1;
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .submodel-band {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
