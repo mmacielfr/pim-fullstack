@@ -1,0 +1,46 @@
+body.pagina-obrigado {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #fff;
+}
+
+body.pagina-obrigado main {
+    max-width: 28rem;
+    text-align: center;
+}
+
+body.pagina-obrigado h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    letter-spacing: 0.08em;
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+body.pagina-obrigado main > p:first-of-type {
+    font-size: 1rem;
+    color: var(--grey-text);
+    line-height: 1.65;
+    margin: 0 0 1.25rem;
+}
+
+.obrigado-marca {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--black);
+    margin: 0 0 2rem;
+}
+
+body.pagina-obrigado .btn-cta {
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: 0.06em;
+}

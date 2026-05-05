@@ -1,0 +1,131 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 2rem auto 4rem;
+    padding: 0 var(--pad-x);
+}
+
+
+.hero-moto {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+}
+
+.hero-text {
+    padding-right: 2rem;
+}
+
+.hero-title {
+    text-align: right;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-brand {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-style: normal;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+.hero-model {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-style: italic;
+    font-size: 3.25rem;
+    letter-spacing: 1px;
+    color: var(--orange);
+    margin-top: 0.25rem;
+}
+
+.hero-desc {
+    text-align: right;
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
+}
+
+.hero-text .btn-cta {
+    margin-left: auto;
+    display: block;
+}
+
+
+.banner {
+    position: relative;
+    background: var(--orange);
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+.banner-bg-text {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.banner-bg-text span {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(8rem, 22vw, 22rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: transparent;
+    -webkit-text-stroke: 3px #fff;
+    white-space: nowrap;
+    transform: scaleY(1.4);
+    transform-origin: center;
+}
+
+.banner-rider {
+    position: relative;
+    z-index: 2;
+    max-height: 360px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: normal;
+}
+
+.btn-banner {
+    position: absolute;
+    z-index: 3;
+    bottom: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #FFB070 0%, #FF6A00 50%, #C84500 100%);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    padding: 0.95rem 3.5rem;
+    border-radius: 999px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+a.btn-banner {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
