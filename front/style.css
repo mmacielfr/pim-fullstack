@@ -1,43 +1,76 @@
+/*
+ * ============================================================================
+ * COMO ESTE ARQUIVO SE CONECTA AO HTML (index.html)
+ * ============================================================================
+ * No <head> do HTML existe: <link rel="stylesheet" href="style.css">
+ * Isso faz o navegador baixar ESTE arquivo e aplicar as regras aos elementos.
+ *
+ * SELETORES comuns:
+ *   .nome        → qualquer elemento com class="nome" no HTML
+ *   elemento     → todas as tags daquele tipo (ex.: img { … })
+ *   .a .b        → .b DENTRO de .a (descendente)
+ *   .a.b         → elemento que tem AS DUAS classes a e b
+ *   :hover       → estado quando o mouse está em cima
+ *   ::before     → “pseudo-elemento” desenhado pelo CSS antes do conteúdo
+ *
+ * “Cascata”: regras mais específicas ou que vêm depois podem sobrescrever as anteriores.
+ * ============================================================================
+ */
+
 /* =============================================================
    KTM LANDING PAGE — style.css
    ============================================================= */
 
-/* ---------- RESET ---------- */
+/* ---------- RESET (base neutra para todos os navegadores) ----------
+   O HTML já tem margens/paddings padrão; aqui zeramos e mudamos o modelo de caixa. */
 * {
+    /* margin/padding 0: remove espaços padrão do user-agent */
     margin: 0;
     padding: 0;
+    /*
+     * box-sizing: border-box — largura/altura incluem padding e borda.
+     * Facilita layout: width:100% não “estoura” por causa do padding.
+     */
     box-sizing: border-box;
 }
 
 html {
+    /* scroll suave quando clicamos links âncora (#modelos etc.) */
     scroll-behavior: smooth;
 }
 
 body {
+    /* Tipografia base da página (textos sem classe específica herdam isso) */
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     background: #fff;
     line-height: 1.5;
+    /* Esconde barra horizontal se algum filho ultrapassar a largura */
     overflow-x: hidden;
 }
 
 img {
+    /* Imagens encolhem junto com o container; display:block remove “espaço fantasma” inline */
     max-width: 100%;
     display: block;
 }
 
 button {
+    /* Botões herdam a fonte do body; remove borda padrão e mostra mãozinha */
     font-family: inherit;
     border: none;
     cursor: pointer;
 }
 
 a {
+    /* Links sem sublinhado e com cor igual ao texto ao redor (herdam color) */
     text-decoration: none;
     color: inherit;
 }
 
-/* ---------- DESIGN TOKENS ---------- */
+/* ---------- DESIGN TOKENS (:root = variáveis CSS reutilizáveis) ----------
+   No HTML usamos class="orange"; aqui .orange usa var(--orange).
+   Trocar --orange num só lugar atualiza toda a marca. */
 :root {
     --orange: #FF6600;
     --orange-light: #FF8A33;
@@ -45,24 +78,28 @@ a {
     --black: #000000;
     --grey-text: #4a4a4a;
     --max-width: 1280px;
+    /* clamp(min, preferido, max): padding lateral responsivo */
     --pad-x: clamp(1rem, 4vw, 4rem);
 }
 
+/* Classe usada nos <span class="orange"> do HTML para destacar texto */
 .orange {
     color: var(--orange);
     font-weight: 600;
 }
 
 /* =============================================================
-   NAVBAR
+   NAVBAR — corresponde ao <header class="navbar"> e filhos no HTML
    ============================================================= */
 .navbar {
+    /* Flex: filhos em linha; space-between empurra logo para o centro visualmente */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem var(--pad-x);
     background: #fff;
     position: relative;
+    /* z-index maior que conteúdo comum para ficar “por cima” ao rolar */
     z-index: 10;
 }
 
@@ -73,6 +110,7 @@ a {
 }
 
 .nav-left a {
+    /* Estilo dos links MODELOS / KTM WORD / … */
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
@@ -108,10 +146,11 @@ a {
 }
 
 /* =============================================================
-   HERO
+   HERO — <section class="hero">; grid de 2 colunas no desktop
    ============================================================= */
 .hero {
     display: grid;
+    /* Duas colunas proporcionais (imagem um pouco maior que texto) */
     grid-template-columns: 1.1fr 1fr;
     align-items: center;
     gap: 2rem;
@@ -137,6 +176,7 @@ a {
 }
 
 .hero-brand {
+    /* span viram blocos empilhados (uma linha KTM, outra RC 200) */
     display: block;
     font-family: 'Anton', sans-serif;
     font-style: italic;
@@ -164,12 +204,13 @@ a {
 }
 
 .hero-text .btn-cta {
+    /* margin-left:auto em display:block empurra o botão para a direita no fluxo */
     margin-left: auto;
     display: block;
 }
 
 /* =============================================================
-   CTA BUTTON (orange gradient pill)
+   CTA BUTTON — .btn-cta no HTML; gradiente + sombra “3D”
    ============================================================= */
 .btn-cta {
     background: linear-gradient(180deg, #FFB070 0%, #FF6A00 50%, #C84500 100%);
@@ -186,6 +227,10 @@ a {
     text-transform: uppercase;
 }
 
+/*
+ * Modificador BEM-like: mesmo botão base, variante menor.
+ * HTML: class="btn-cta btn-cta--small" → ambas as regras aplicam.
+ */
 .btn-cta--small {
     padding: 0.75rem 2.25rem;
     font-size: 0.95rem;
@@ -194,7 +239,7 @@ a {
 }
 
 /* =============================================================
-   BRAD BINDER BANNER
+   BRAD BINDER BANNER — section.banner + img + botão absoluto
    ============================================================= */
 .banner {
     position: relative;
@@ -223,6 +268,7 @@ a {
     font-weight: 900;
     line-height: 0.85;
     letter-spacing: -0.02em;
+    /* Letras só com contorno (efeito decalque) */
     color: transparent;
     -webkit-text-stroke: 3px #fff;
     white-space: nowrap;
@@ -259,7 +305,7 @@ a {
 }
 
 /* =============================================================
-   MODELOS DISPONÍVEIS
+   MODELOS DISPONÍVEIS — .models, .model-grid (CSS Grid)
    ============================================================= */
 .models {
     max-width: var(--max-width);
@@ -289,6 +335,7 @@ a {
     padding: 1.5rem 1rem 2rem;
     text-align: center;
     background: #fff;
+    /* Coluna flex: imagem, título e botão empilhados e centralizados */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -319,13 +366,17 @@ a {
 }
 
 /* =============================================================
-   ISSO É KTM
+   ISSO É KTM — grid + sticky + posicionamento de imagens nas features
    ============================================================= */
 .ktm-essence {
     margin-top: 4rem;
 }
 
 .essence-banner {
+    /*
+     * Primeira declaração de background foi sobrescrita pela segunda (mesma propriedade).
+     * Mantém fundo laranja sólido; ::before/::after criam degradês nas laterais.
+     */
     background: linear-gradient(90deg,
         #fff 0%,
         var(--orange) 8%,
@@ -338,6 +389,9 @@ a {
     position: relative;
 }
 
+/*
+ * Pseudo-elementos: não existem no HTML; o CSS “inventa” camadas para efeito visual.
+ */
 .essence-banner::before,
 .essence-banner::after {
     content: "";
@@ -380,6 +434,7 @@ a {
 }
 
 .essence-rider {
+    /* sticky: coluna da foto “gruda” um pouco ao rolar (efeito parallax leve) */
     position: sticky;
     top: 2rem;
 }
@@ -399,6 +454,7 @@ a {
 
 .feature {
     position: relative;
+    /* Espaço à direita reservado para imagens absolutas (.feature-img) */
     padding-right: 220px;
 }
 
@@ -491,6 +547,7 @@ a {
     flex: 0 0 auto;
 }
 
+/* Espelha horizontalmente o mesmo PNG para parecer par esquerdo/direito */
 .warranty-badge--right {
     transform: scaleX(-1);
 }
@@ -566,6 +623,7 @@ a {
     transition: filter 0.2s;
 }
 
+/* Hover: filter converte o ícone para um tom próximo do laranja da marca */
 .footer-socials a:hover img {
     filter: brightness(0) saturate(100%) invert(42%) sepia(98%) saturate(2654%) hue-rotate(1deg) brightness(101%) contrast(101%);
 }
@@ -587,9 +645,13 @@ a {
 }
 
 /* =============================================================
-   RESPONSIVE
+   RESPONSIVE — @media: regras extras só quando a tela é estreita
    ============================================================= */
 @media (max-width: 960px) {
+    /*
+     * Em telas ≤960px o hero vira 1 coluna (grid-template-columns: 1fr).
+     * Isso empilha imagem e texto como no mobile-first.
+     */
     .hero {
         grid-template-columns: 1fr;
         text-align: center;

@@ -1,43 +1,102 @@
+<!--
+  =============================================================================
+  GUIA RÁPIDO DE TAGS HTML (esta página)
+  =============================================================================
+  <!DOCTYPE html> — avisa ao navegador que é HTML5 (modo padrão correto).
+
+  <html lang="pt-BR"> — raiz do documento; lang ajuda leitores de tela e SEO.
+
+  <head> — metadados e links (não aparecem como “caixas” visíveis na página).
+  <body> — tudo que o usuário vê na tela.
+
+  <div> — bloco genérico só para agrupar e estilizar (sem significado semântico).
+
+  <section> — agrupa um TEMA da página (ex.: hero, modelos, garantia).
+  <article> — conteúdo que faz sentido “sozinho” (card de modelo, bloco de feature).
+
+  <header> — cabeçalho da página ou de uma região (aqui: barra superior).
+  <footer> — rodapé com links/brand.
+
+  <nav> — bloco de navegação (links principais).
+
+  <h1> … <h6> — títulos hierárquicos (h1 = mais importante; use um h1 por página
+              em geral). h2 = seção, h3 = subseção, h4/h5 = rodapé ou detalhes.
+
+  <p> — parágrafo de texto corrido.
+
+  <span> — trecho INLINE dentro de um parágrafo/título (ex.: destacar cor).
+
+  <a> — hyperlink (href = destino). pode envolver texto ou imagem.
+
+  <img> — imagem (src, alt para acessibilidade; alt vazio = decorativa).
+
+  <button> — ação clicável (diferente de <a>: não navega por padrão).
+
+  class="nome" — “rótulo” para o CSS em style.css (ex.: .hero-title { … }).
+
+  id="nome" — identificador único; aqui usamos para âncoras (#modelos no link).
+
+  Integração com CSS — na <head>, <link rel="stylesheet" href="style.css">
+  carrega as regras; cada classe no HTML é estilizada pelo seletor .classe no CSS.
+  =============================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Charset UTF-8: acentos e símbolos -->
     <meta charset="UTF-8">
+    <!-- viewport: página responsiva em celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KTM — Potência que Domina</title>
+    <!-- Fontes externas (opcional); preconnect acelera o carregamento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AQUI o CSS desta pasta é “plugado” no HTML: style.css estiliza as classes abaixo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ============== NAVBAR ============== -->
+    <!-- ========== NAVBAR ==========
+         <header>: topo da página (logo + menu).
+         class="navbar": no CSS, .navbar vira flex com espaço entre itens. -->
     <header class="navbar">
+        <!-- <nav>: grupo de links de navegação; .nav-left no CSS alinha e espaça os <a> -->
         <nav class="nav-left">
             <a href="#modelos">MODELOS</a>
             <a href="#ktm-word">KTM WORD</a>
             <a href="#diferencial">DIFERENCIAL</a>
         </nav>
 
+        <!-- Logo clicável; aria-label descreve o botão para leitores de tela -->
         <a href="#" class="nav-logo" aria-label="KTM">
+            <!-- img: mídia; width/height reservam espaço e evitam “pulo” de layout -->
             <img src="images/logo-ktm.svg" alt="" width="220" height="70" decoding="async">
         </a>
 
+        <!-- div: agrupa só o botão à direita; .nav-right empurra para o fim (flex-end no CSS) -->
         <div class="nav-right">
             <button class="btn-login" type="button">LOGING</button>
         </div>
     </header>
 
-    <!-- ============== HERO ============== -->
+    <!-- ========== HERO (destaque principal) ==========
+         section: bloco temático “abertura da landing”.
+         Dentro: duas divs (imagem + texto) lado a lado no CSS (.hero grid). -->
     <section class="hero">
+        <!-- div.hero-image: container da foto; o img dentro ganha largura 100% no CSS -->
         <div class="hero-image">
             <img src="images/agrupamento%20moto%20titulo%20inicio.png" alt="KTM RC 200 com texto Potência que Domina">
         </div>
+        <!-- div.hero-text: coluna do texto + botão -->
         <div class="hero-text">
+            <!-- h1: título principal da página (SEO/acessibilidade) -->
             <h1 class="hero-title">
+                <!-- span: pedaços inline do título (KTM e RC 200 com estilos diferentes no CSS) -->
                 <span class="hero-brand">KTM</span>
                 <span class="hero-model">RC 200</span>
             </h1>
+            <!-- p: parágrafo; .hero-desc no CSS define alinhamento à direita e cor cinza -->
             <p class="hero-desc">
                 O DNA de competição da marca em uma <span class="orange">esportiva leve</span>,
                 precisa e extremamente responsiva. Equipada com motor monocilíndrico de
@@ -47,12 +106,16 @@
                 <span class="orange">velocidade e controle</span> nas ruas da cidade ou em
                 pilotagens esportivas.
             </p>
+            <!-- .btn-cta no CSS = botão laranja em formato “pílula” -->
             <button class="btn-cta" type="button">COMPRAR</button>
         </div>
     </section>
 
-    <!-- ============== BRAD BINDER BANNER ============== -->
+    <!-- ========== BANNER BRAD BINDER ==========
+         section com id="ktm-word": links <a href="#ktm-word"> rolam até aqui.
+         .banner no CSS = fundo laranja, imagem central, botão absolute. -->
     <section class="banner" id="ktm-word">
+        <!-- Texto gigante só visual; aria-hidden evita leitura repetida em SR -->
         <div class="banner-bg-text" aria-hidden="true">
             <span>BRAD BINDER</span>
         </div>
@@ -60,16 +123,23 @@
         <button class="btn-banner" type="button">KTM WORD</button>
     </section>
 
-    <!-- ============== MODELOS ============== -->
+    <!-- ========== MODELOS ==========
+         section#modelos: âncora da navbar “MODELOS”.
+         h2: título de SEÇÃO (nível abaixo do h1).
+         div.model-grid: no CSS vira grid de 3 colunas (1 coluna no mobile). -->
     <section class="models" id="modelos">
         <h2 class="section-title">MODELOS DISPONÍVEIS</h2>
 
         <div class="model-grid">
+            <!-- article: cada card é um “item independente” (bom para semântica/SEO) -->
             <article class="model-card">
+                <!-- div só para moldurar a área da imagem (aspect-ratio no CSS) -->
                 <div class="model-img">
                     <img src="images/Image%20(2).png" alt="Moto KTM Off-Road">
                 </div>
+                <!-- h3: subtítulo dentro da seção “MODELOS” -->
                 <h3 class="model-name">OFF-ROAD</h3>
+                <!-- modificador --small: segunda classe no CSS (.btn-cta.btn-cta--small) -->
                 <button class="btn-cta btn-cta--small" type="button">Ver mais</button>
             </article>
 
@@ -91,12 +161,14 @@
         </div>
     </section>
 
-    <!-- ============== ISSO É KTM ============== -->
+    <!-- ========== ISSO É KTM (diferenciais) ========== -->
     <section class="ktm-essence" id="diferencial">
+        <!-- Faixa laranja com título; .essence-banner estiliza gradientes nas bordas (::before/::after no CSS) -->
         <div class="essence-banner">
             <h2>ISSO É KTM</h2>
         </div>
 
+        <!-- Grid de 2 colunas: foto fixa (sticky) + coluna de articles -->
         <div class="essence-content">
             <div class="essence-rider">
                 <img src="images/Piloto%20imagem%20aba%20(isso%20%C3%A9%20ktm).png" alt="Piloto KTM em moto naked">
@@ -104,6 +176,7 @@
 
             <div class="essence-features">
 
+                <!-- article.feature: bloco “Chassi”; h3 + p + divs decorativas + img -->
                 <article class="feature">
                     <h3 class="feature-title">CHASSI <span class="orange">TRELIÇADO</span></h3>
                     <p>
@@ -112,6 +185,7 @@
                         Garantindo <span class="orange">leveza, estabilidade</span> e
                         <span class="orange">precisão</span> nas curvas.
                     </p>
+                    <!-- divs vazias: linha decorativa; estilizadas por .feature-line no CSS -->
                     <div class="feature-line feature-line--right" aria-hidden="true"></div>
                     <div class="feature-img feature-img--chassi">
                         <img src="images/Chassi%20treli%C3%A7a%20(isso%20%C3%A9%20ktm).png" alt="Chassi treliçado KTM">
@@ -145,19 +219,22 @@
         </div>
     </section>
 
-    <!-- ============== GARANTIA ============== -->
+    <!-- ========== GARANTIA ========== -->
     <section class="warranty">
         <h2 class="section-title">GARANTIA</h2>
 
+        <!-- div.warranty-row: flex no CSS — selos + foto central -->
         <div class="warranty-row">
             <img class="warranty-badge warranty-badge--left" src="images/selo%20garantia%204%20anos%20png%20direita.png" alt="Selo 4 anos de garantia">
             <div class="warranty-photo">
                 <img src="images/Image%20(5).png" alt="Piloto KTM em pista">
             </div>
+            <!-- Mesmo selo espelhado no CSS (.warranty-badge--right scaleX(-1)) -->
             <img class="warranty-badge warranty-badge--right" src="images/selo%20garantia%204%20anos%20png%20direita.png" alt="Selo 4 anos de garantia">
         </div>
 
         <div class="warranty-info">
+            <!-- h3 como subtítulo da seção garantia -->
             <h3 class="warranty-title">WORRY-FREE</h3>
             <p>
                 <span class="orange">Toda moto KTM nova</span> vem com uma garantia de
@@ -169,10 +246,14 @@
         </div>
     </section>
 
-    <!-- ============== FOOTER ============== -->
+    <!-- ========== FOOTER ==========
+         footer: rodapé semântico.
+         h4/h5: hierarquia menor que h2/h3 (títulos de colunas).
+         div.footer-grid: grid de 4 colunas no desktop (CSS). -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
+                <!-- h4: título da primeira coluna -->
                 <h4>Nome do site</h4>
                 <div class="footer-socials" aria-label="Redes sociais">
                     <a href="#" aria-label="Facebook">
@@ -190,6 +271,7 @@
                 </div>
             </div>
 
+            <!-- div.footer-col: colunas de links; h5 = rótulo do grupo -->
             <div class="footer-col">
                 <h5>Tópico</h5>
                 <a href="#">Página</a>
