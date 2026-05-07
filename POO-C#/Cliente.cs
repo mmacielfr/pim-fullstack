@@ -1,6 +1,5 @@
 namespace AluguelMoto;
 
-// Dados da pessoa que vai alugar (preenchidos no formulário).
 public class Cliente
 {
     public string Nome { get; set; } = string.Empty;
