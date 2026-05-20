@@ -1,0 +1,205 @@
+.ktm-essence {
+    margin-top: 4rem;
+}
+
+.essence-banner {
+    background: linear-gradient(90deg,
+        #fff 0%,
+        var(--orange) 8%,
+        var(--orange) 92%,
+        #fff 100%);
+    background: var(--orange);
+    padding: 1.25rem 0;
+    margin: 0 var(--pad-x);
+    border-radius: 4px;
+    position: relative;
+}
+
+.essence-banner::before,
+.essence-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+}
+
+.essence-banner::before {
+    left: 0;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+.essence-banner::after {
+    right: 0;
+    background: linear-gradient(-90deg, #fff, transparent);
+}
+
+.essence-banner h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    letter-spacing: 4px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.essence-content {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 3rem auto;
+    padding: 0 var(--pad-x);
+    align-items: start;
+}
+
+.essence-rider {
+    position: sticky;
+    top: 2rem;
+}
+
+.essence-rider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.essence-features {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.feature {
+    position: relative;
+    padding-right: 220px;
+}
+
+.feature-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    color: var(--black);
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.feature-line {
+    position: absolute;
+    top: 1rem;
+    right: 200px;
+    width: 80px;
+    height: 1px;
+    background: var(--black);
+}
+
+.feature-line::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--black);
+}
+
+.feature-line::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--black);
+}
+
+.feature-img {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    width: 200px;
+    height: auto;
+}
+
+.feature-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.feature-img--suspensao {
+    width: 130px;
+    right: 30px;
+}
+
+
+.warranty {
+    max-width: var(--max-width);
+    margin: 5rem auto 4rem;
+    padding: 0 var(--pad-x);
+}
+
+.warranty-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.warranty-badge {
+    width: 240px;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.warranty-badge--right {
+    transform: scaleX(-1);
+}
+
+.warranty-photo {
+    flex: 1;
+    max-width: 600px;
+}
+
+.warranty-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.warranty-info {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.warranty-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.warranty-info p {
+    font-size: 0.95rem;
+    color: var(--grey-text);
+    line-height: 1.6;
+    text-align: justify;
+}

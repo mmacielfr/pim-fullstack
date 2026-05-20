@@ -1,0 +1,10 @@
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Pp]ublish/
+*.user
+*.suo
+.vs/
+.vscode/
+*.cache

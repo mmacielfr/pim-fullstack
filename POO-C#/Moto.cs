@@ -1,6 +1,5 @@
 namespace AluguelMoto;
 
-// Uma moto KTM que pode ser alugada (dados alinhados com o front).
 public class Moto
 {
     public int Id { get; set; }
