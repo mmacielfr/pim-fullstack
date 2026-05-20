@@ -1,17 +1,27 @@
 namespace AluguelMoto;
 
-// Uma moto que pode ser alugada.
+// Uma moto KTM que pode ser alugada (dados alinhados com o front).
 public class Moto
 {
-    // Número que o usuário escolhe no menu.
     public int Id { get; set; }
 
-    // Nome do modelo.
     public string Modelo { get; set; } = string.Empty;
 
-    // Diz de qual categoria é (mesmo número da categoria).
+    public string Marca { get; set; } = "KTM";
+
     public int CategoriaId { get; set; }
 
-    // Placa só para mostrar no final (dados de mentirinha).
     public string Placa { get; set; } = string.Empty;
+
+    public decimal PrecoMensal { get; set; }
+
+    public int Cilindrada { get; set; }
+
+    public string Motor { get; set; } = string.Empty;
+
+    public string Estilo { get; set; } = string.Empty;
+
+    public string IdealPara { get; set; } = string.Empty;
+
+    public string Descricao { get; set; } = string.Empty;
 }
