@@ -7,22 +7,58 @@ class Program
     static void Main(string[] args)
     {
         List<Categoria> categorias = new List<Categoria>();
-        categorias.Add(new Categoria { Id = 1, Nome = "Street" });
-        categorias.Add(new Categoria { Id = 2, Nome = "Trail / Aventura" });
-        categorias.Add(new Categoria { Id = 3, Nome = "Esportiva" });
+        categorias.Add(new Categoria { Id = 1, Nome = "Off-Road" });
+        categorias.Add(new Categoria { Id = 2, Nome = "Naked" });
+        categorias.Add(new Categoria { Id = 3, Nome = "Sport" });
 
         List<Moto> motos = new List<Moto>();
-        motos.Add(new Moto { Id = 1, Modelo = "Honda CG 160", CategoriaId = 1, Placa = "ABC1D23" });
-        motos.Add(new Moto { Id = 2, Modelo = "Yamaha Fazer 250", CategoriaId = 1, Placa = "XYZ9K87" });
-        motos.Add(new Moto { Id = 3, Modelo = "BMW G 310 GS", CategoriaId = 2, Placa = "TRK4E56" });
-        motos.Add(new Moto { Id = 4, Modelo = "Honda XRE 300", CategoriaId = 2, Placa = "MNO2F34" });
-        motos.Add(new Moto { Id = 5, Modelo = "Kawasaki Ninja 400", CategoriaId = 3, Placa = "QWE8G12" });
-        motos.Add(new Moto { Id = 6, Modelo = "Yamaha MT-03", CategoriaId = 3, Placa = "ASD5H99" });
+        motos.Add(new Moto
+        {
+            Id = 1,
+            Modelo = "KTM 525 EXC 2006",
+            Marca = "KTM",
+            CategoriaId = 1,
+            Placa = "KTM1O01",
+            PrecoMensal = 2199,
+            Cilindrada = 510,
+            Motor = "Monocilíndrico 4 tempos",
+            Estilo = "Trail / Enduro",
+            IdealPara = "Trilhas, terreno misto e uso off-road",
+            Descricao = "Moto off-road robusta, com boa suspensão para irregularidades e motor linear para controle em baixa e média rotação."
+        });
+        motos.Add(new Moto
+        {
+            Id = 2,
+            Modelo = "KTM Duke 390",
+            Marca = "KTM",
+            CategoriaId = 2,
+            Placa = "KTM2N02",
+            PrecoMensal = 1499,
+            Cilindrada = 373,
+            Motor = "Monocilíndrico",
+            Estilo = "Naked urbana",
+            IdealPara = "Cidade, estrada e uso diário",
+            Descricao = "Posição ereta, manuseio leve e eletrônica moderna. Ótima para deslocamentos urbanos com visual esportivo."
+        });
+        motos.Add(new Moto
+        {
+            Id = 3,
+            Modelo = "KTM RC 390",
+            Marca = "KTM",
+            CategoriaId = 3,
+            Placa = "KTM3S03",
+            PrecoMensal = 1799,
+            Cilindrada = 373,
+            Motor = "Monocilíndrico",
+            Estilo = "Sport carenada",
+            IdealPara = "Pista, estrada e pilotagem esportiva",
+            Descricao = "Potência, freios de alto desempenho e aerodinâmica pensada para estabilidade em velocidade."
+        });
 
         string? linha;
 
         Console.WriteLine("========================================");
-        Console.WriteLine("   Bem-vindo ao sistema de aluguel de motos!");
+        Console.WriteLine("   Bem-vindo ao aluguel de motos KTM!");
         Console.WriteLine("========================================");
         Console.WriteLine();
 
@@ -93,7 +129,7 @@ class Program
         Console.WriteLine("--- Motos (" + nomeCategoriaEscolhida + ") ---");
         foreach (Moto m in listaMotos)
         {
-            Console.WriteLine("  " + m.Id + ") " + m.Modelo + " - Placa " + m.Placa);
+            Console.WriteLine("  " + m.Id + ") " + m.Marca + " " + m.Modelo + " - R$ " + m.PrecoMensal + "/mês - Placa " + m.Placa);
         }
 
         Console.WriteLine();
@@ -180,11 +216,25 @@ class Program
             return;
         }
 
+        Aluguel aluguel = new Aluguel
+        {
+            Id = 1,
+            Moto = motoEscolhida,
+            Cliente = cliente,
+            NomeCategoria = nomeCategoriaEscolhida,
+            ValorMensal = motoEscolhida.PrecoMensal,
+            DataAluguel = DateTime.Now
+        };
+
         Console.WriteLine();
         Console.WriteLine(">>> Moto alugada com sucesso! <<<");
-        Console.WriteLine("    Cliente: " + cliente.Nome);
-        Console.WriteLine("    Moto: " + motoEscolhida.Modelo + " (" + motoEscolhida.Placa + ")");
+        Console.WriteLine("    Cliente: " + aluguel.Cliente.Nome);
+        Console.WriteLine("    Moto: " + aluguel.Moto.Marca + " " + aluguel.Moto.Modelo + " (" + aluguel.Moto.Placa + ")");
+        Console.WriteLine("    Categoria: " + aluguel.NomeCategoria);
+        Console.WriteLine("    Valor: R$ " + aluguel.ValorMensal + " / mês");
+        Console.WriteLine("    Cilindrada: " + aluguel.Moto.Cilindrada + " cm³");
+        Console.WriteLine("    Estilo: " + aluguel.Moto.Estilo);
         Console.WriteLine();
-        Console.WriteLine("Obrigado por usar nosso sistema.");
+        Console.WriteLine("Obrigado por alugar sua KTM. READY TO RACE!");
     }
 }
