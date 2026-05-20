@@ -8,3 +8,7 @@
 .vs/
 .vscode/
 *.cache
+__pycache__/
+*.pyc
+machine-learning/relatorios/
+machine-learning/.venv/
